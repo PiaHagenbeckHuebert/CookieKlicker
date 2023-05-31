@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title> Cookie Clicker </title>
+<style>
+
+    body{
+        background-color: rgb(208, 208, 228);
+        }
+    h1 {
+        font-size: 20px; 
+        font-family:'Times New Roman', Times, serif; 
+        }
+    p {
+    font-size: 20;  
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    #Zähler {
+        color: brown;
+    }
+    #reset {
+        color: blue;
+    }
+    #cookie{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    #need-css {
+        font-size: 100px;
+    }
+    
+    
+
+</style>
+
+    
+</head>
+
+<body>
+   <div>
+        <h1 style="font-size: 100px;" id="headline" >Cookie-Clicker </h1>
+        <p> Created by Kelly</p>
+        <p> The purpose of the website is a cookie clicker game.</p>
+        <img src="https://static.vecteezy.com/system/resources/previews/009/400/368/original/homemade-tasty-cookies-clipart-design-illustration-free-png.png" 
+        id="cookie" width="400" onclick="increment()">
+        <p>Cookie Clicket: <span id= "Zähler" onclick="countfeedback()">0</span> </p>
+        <p id= "feedback"> </p>
+        <button id="reset" onclick = "reset()" >reset</button >
+         <button id="colorButton" type="button" onclick="changecolor()">Change color</button>
+    </div>    
+    
+</body>
+    <script>
+       
+        var nachrichten = ["Weiter so","Klasse","Super","Toll","Gut gemacht","Grandios"];
+
+        var clicks = 0; 
+        function increment() {
+            clicks = clicks + 1;
+            var randomZahl = (Math.floor(Math.random() * nachrichten.length)); 
+            console.log(randomZahl);
+            var generator = nachrichten [randomZahl];
+            console.log(generator);
+            if ((clicks % 5) == 0) {
+                countfeedback(generator);    
+            } 
+            Zähler.innerHTML = clicks;
+        }
+        function reset() {
+            clicks = 0
+            Zähler.innerHTML = clicks;
+        }
+        function countfeedback (nachricht="Super") {
+            console.log(nachricht); 
+            feedback.innerHTML = nachricht;
+          };
+            
+        function changecolor() {
+        document.body.style.backgroundColor = "red";
+        }  
+
+        
+        
+    </script>
+</html>
